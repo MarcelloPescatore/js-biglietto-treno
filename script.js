@@ -41,10 +41,17 @@ if (numberAge < 18) {
     // stamp the final price in euro rounded from this statement 
     const finalPrice = `Prezzo totale: ${costKmDiscountedTwoDecimalsEuro}`;
     console.log(finalPrice);
+} else if (18 <= numberAge && numberAge <= 65){
+    // fix the cost in 2 decimal
+    const costKmTwoDecimals = costKm.toFixed(2);
+    // tranform this cost in Euro
+    const costKmTwoDecimalsEuro = `${costKmTwoDecimals} €`;
+    // stamp the final price in euro rounded from this statement 
+    const finalPrice = `Prezzo totale: ${costKmTwoDecimalsEuro}`;
+    console.log(finalPrice);
 }
-
 // Third rule: if the user age is higher than 65, apply a discount to costKm
-if (numberAge > 65) {
+else {
     const costKmDiscounted = costKm - costKm * 40 /100 ;
     // fix the cost in 2 decimal
     const costKmDiscountedTwoDecimals = costKmDiscounted.toFixed(2) ;
@@ -53,7 +60,6 @@ if (numberAge > 65) {
     // stamp the final price in euro rounded from this statement  
     const finalPrice = `Prezzo totale: ${costKmDiscountedTwoDecimalsEuro}` ;
     console.log(finalPrice);
-}
-
+} 
 
 
